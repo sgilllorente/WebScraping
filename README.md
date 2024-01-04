@@ -49,4 +49,8 @@ A continuación se adjunta una captura del bot enviando el mensaje por telegram.
 ![image](https://github.com/sgilllorente/WebScraping/assets/100001940/1de1a891-5696-4d47-b558-69ffd0aa68e5)
 
 
+## Referencias
+https://medium.com/@ManHay_Hong/how-to-create-a-telegram-bot-and-send-messages-with-python-4cf314d9fa3e
+
+
 
