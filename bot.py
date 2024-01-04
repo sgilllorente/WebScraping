@@ -5,18 +5,15 @@ from webScraping import get_current_price
 previous_price = None
 
 def telegram_bot_sendtext(bot_message):
-    bot_token = ''
-    bot_chatID = ''
+    bot_token = '' #token de tu bot de telegram
+    bot_chatID = '' #ID de tu bot de telegram
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
 
     response = requests.get(send_text)
 
     return response.json()
 
-while True:
-    
-
-   
+while True: 
     current_price = get_current_price()
     print(current_price)
     
