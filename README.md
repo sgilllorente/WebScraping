@@ -27,4 +27,26 @@ En este programa tenemos la función que configura y el bot para la comunicació
       
           return response.json()
 
-Deberemos introducir el token de nuestro bot en "bot_token" y el id de nuesto bot en "bot_chatID". Podremos crear nuestro bot haciendo uso de [BotFather](https://telegram.me/BotFather) 
+Deberemos introducir el token de nuestro bot en "bot_token" y el id de nuesto bot en "bot_chatID". Podremos crear nuestro bot haciendo uso de [BotFather](https://telegram.me/BotFather).
+
+      while True: 
+          current_price = get_current_price()
+          print(current_price)
+          
+          if previous_price is not None and current_price < previous_price:
+              mensaje = f"¡El precio ha bajado! Está en: {str(current_price) + '€'}\n\nEnlace: https://www.eneba.com/es/logitech-g27-like-g29-g923-g920-g25-f7a005f3"
+              telegram_bot_sendtext(mensaje)
+              print(mensaje)  
+              
+          previous_price = current_price   
+          time.sleep(30)
+
+En el bucle infinito obtendremos, usando la función del programa de webScraping, el precio actual del producto. Se comprueba que el producto haya bajado de precio comparándolo con el precio tomado anteriormente, si es así, se envía por telegram un mensaje de que el precio ha disminuido y se envía el enlace al producto. Se comprobará el precio cada 30 segundos.
+
+Es importante importar la función "get_current_price" del programa webScraping al igual que las librerías necesarias para el correcto funcionamiento del programa.
+A continuación se adjunta una captura del bot enviando el mensaje por telegram.
+
+![image](https://github.com/sgilllorente/WebScraping/assets/100001940/1de1a891-5696-4d47-b558-69ffd0aa68e5)
+
+
+
